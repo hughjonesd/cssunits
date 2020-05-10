@@ -1,0 +1,42 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# cssunits
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+cssunits allows you to use the R [units](https://cran.r-project.org/package=units)
+library with CSS and LaTeX widths.
+
+## Installation
+
+
+Install from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("hughjonesd/cssunits")
+```
+
+## Example
+
+
+```{r example}
+library(cssunits)
+library(units)
+install_css_units()
+set_units(72, "pt") + set_units(1, "in")
+```
