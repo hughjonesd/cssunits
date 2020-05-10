@@ -64,6 +64,7 @@ set_latex_units <- function (
 #' unloadNamespace("cssunits")
 #' unloadNamespace("units")
 #' library(cssunits)
+#' install_css_units()
 #'
 #' unit_css(c("3em", "14px"))
 #'
