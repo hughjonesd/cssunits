@@ -122,7 +122,5 @@ latex_macro_db <- data.frame(
 )
 
 
-
-usethis::use_data(css_unit_db, overwrite = TRUE, compress = FALSE)
-usethis::use_data(latex_unit_db, overwrite = TRUE, compress = FALSE)
-usethis::use_data(latex_macro_db, overwrite = TRUE, compress = FALSE)
+usethis::use_data(css_unit_db, latex_unit_db, latex_macro_db,
+      overwrite = TRUE, compress = FALSE, internal = TRUE)

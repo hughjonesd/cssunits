@@ -10,15 +10,25 @@ install_css_units()
 Install units for CSS
 }
 \details{
-Source: https://www.w3.org/TR/css3-values/, 10 May 2020.
-
 Some units will be removed from the standard database, including
 "pt" (pint), "t" (tonne), "pi" (the mathematical constant), "h" (hour),
 "rem" (unit of radiation).
 }
+\section{Removing}{
+
+These functions install incompatible versions of some units, e.g. CSS points
+are not the same as LaTeX points. They are also not idempotent: calling
+them twice will probably generate an error.
+To return to the pristine udunits2 database, use\preformatted{unloadNamespace("cssunits")
+unloadNamespace("units")
+library(units)
+}
+}
+
 \examples{
 
 library(units)
 install_css_units()
-set_units(72, "pt") + set_units(1, "in")
+set_units(1, "in") + set_units(72, "pt")
+
 }

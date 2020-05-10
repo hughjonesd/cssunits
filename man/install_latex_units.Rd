@@ -14,16 +14,25 @@ as \verb{\\\\textwidth}?}
 Install length units for LaTeX
 }
 \details{
-Values are sourced from
-https://raw.githubusercontent.com/debian-tex/texlive-bin/master/texk/web2c/pdftexdir/pdftex.web.
-
 Some units will be removed from the standard udunits database, including
 "pt" (pint), "t" (tonne), "d" (day), "cc" (cubic centimeters), and
 "u" (unit of atomic mass).
 }
+\section{Removing}{
+
+These functions install incompatible versions of some units, e.g. CSS points
+are not the same as LaTeX points. They are also not idempotent: calling
+them twice will probably generate an error.
+To return to the pristine udunits2 database, use\preformatted{unloadNamespace("cssunits")
+unloadNamespace("units")
+library(units)
+}
+}
+
 \examples{
 
 library(units)
 install_latex_units()
-set_units(72, "pt") + set_units(1, "in")
+set_units(1, "in") + set_units(72.27, "pt")
+
 }
