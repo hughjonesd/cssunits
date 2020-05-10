@@ -30,6 +30,15 @@ test_that("length additions", {
 })
 
 
+test_that("latex_units<-", {
+  x <- 1
+  latex_units(x) <- "bp"
+  expect_equal(x, set_units(1, "bp"))
+  y <- 1
+  expect_error(latex_units(y) <- "m")
+})
+
+
 test_that("set_latex_units", {
   expect_equal(set_latex_units(1, "bp"), set_units(1, "bp"))
   expect_equal(set_latex_units(1, bp), set_units(1, "bp"))

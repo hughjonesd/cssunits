@@ -17,32 +17,6 @@
 "_PACKAGE"
 
 
-#' Data frame of CSS and LaTeX units
-#'
-#' The package exports three data frames:  `css_unit_db`,
-#' `latex_unit_db` and `latex_macro_db`.
-#'
-#' The format is not the same as the udunits2 database. Rows are:
-#'
-#' * `symbol`: symbol, e.g. "pt"
-#' * `from_unit`: unit on which the new unit is based, or `NA`
-#' * `new`: is unit new or already defined in udunits2?
-#' * `remove`: list-column of conflicting units to remove from udunits2
-#' * `type`: one of percent, length, angle, duration, frequency, resolution
-#'
-#' Some units are redefined by "cssunits" so as to use a new
-#' symbol. For example, "arc_degree" is present in udunits2, but it is replaced
-#' by a new "deg" unit here.
-#'
-#' @name css_unit_db
-#' @export
-#' @docType data
-#' @author David Hugh-Jones <davidhughjones@gmail.com>
-#' @references
-#' * \url{https://www.w3.org/TR/css3-values/}
-#' * \url{https://raw.githubusercontent.com/debian-tex/texlive-bin/master/texk/web2c/pdftexdir/pdftex.web}
-#' @keywords data
-NULL
 
 
 #' @name latex_unit_db

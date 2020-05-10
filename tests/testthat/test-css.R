@@ -45,6 +45,15 @@ test_that("resolution additions", {
 })
 
 
+test_that("css_units<-", {
+  x <- 1
+  css_units(x) <- "px"
+  expect_equal(x, set_units(1, "px"))
+  y <- 1
+  expect_error(css_units(y) <- "m")
+})
+
+
 test_that("set_css_units", {
   expect_equal(set_css_units(1, "dpi"), set_units(1, "dpi"))
   expect_equal(set_css_units(1, dpi), set_units(1, "dpi"))
@@ -59,6 +68,8 @@ test_that("from_css", {
   degmin90 <- mixed_units(-90, "deg")
 
   expect_equal(from_css("180deg"), deg)
+  # case doesn't matter in CSS
+  expect_equal(from_css("180DEG"), deg)
   expect_equal(from_css("+180deg"), deg)
   expect_equal(from_css("180e0deg"), deg)
   expect_equal(from_css("0.1deg"), deg0.1)
