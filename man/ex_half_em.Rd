@@ -7,7 +7,7 @@
 ex_half_em(on = TRUE)
 }
 \arguments{
-\item{on}{\code{TRUE}or \code{FALSE} to switch behaviour on or off.}
+\item{on}{\code{TRUE} or \code{FALSE} to switch behaviour on or off.}
 }
 \description{
 Define ex = 0.5em

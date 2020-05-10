@@ -16,6 +16,16 @@
 #' @keywords internal
 "_PACKAGE"
 
+
+#' This is data to be included in my package
+#'
+#' @name css_unit_db
+#' @docType data
+#' @author David Hugh-Jones <davidhughjones@gmail.com>
+#' @references \url{https://www.w3.org/TR/css3-values/}
+#' @keywords data
+NULL
+
 # The following block is used by usethis to automatically manage
 # roxygen namespace tags. Modify with care!
 ## usethis namespace: start
