@@ -32,7 +32,9 @@ test_that("length additions", {
 
 test_that("set_latex_units", {
   expect_equal(set_latex_units(1, "bp"), set_units(1, "bp"))
+  expect_equal(set_latex_units(1, bp), set_units(1, "bp"))
   expect_error(set_latex_units(1, "m"))
+  expect_error(set_latex_units(1, m))
 })
 
 

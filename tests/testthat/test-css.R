@@ -47,7 +47,9 @@ test_that("resolution additions", {
 
 test_that("set_css_units", {
   expect_equal(set_css_units(1, "dpi"), set_units(1, "dpi"))
+  expect_equal(set_css_units(1, dpi), set_units(1, "dpi"))
   expect_error(set_css_units(1, "m"))
+  expect_error(set_css_units(1, m))
 })
 
 
@@ -73,8 +75,6 @@ test_that("unit_css", {
           mixed_units(c(1, 12), c("em", "pt"))
         )
 })
-
-
 
 
 teardown({
