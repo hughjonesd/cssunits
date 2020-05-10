@@ -110,7 +110,12 @@ install_units_from_db <- function (db) {
 #' @export
 #'
 #' @examples
+#'
+#' unloadNamespace("cssunits")
+#' unloadNamespace("units")
+#' library(cssunits)
 #' library(units)
+#'
 #' install_css_units()
 #' ex_half_em()
 #' set_units(1, "em") + set_units(1, "ex")

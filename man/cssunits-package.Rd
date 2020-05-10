@@ -22,6 +22,14 @@ install_css_units()
 install_latex_units()
 }
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/hughjonesd/cssunits}
+  \item Report bugs at \url{https://github.com/hughjonesd/cssunits/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: David Hugh-Jones \email{davidhughjones@gmail.com}
 

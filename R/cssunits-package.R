@@ -19,6 +19,9 @@
 
 #' Data frame of CSS and LaTeX units
 #'
+#' The package exports three data frames:  `css_unit_db`,
+#' `latex_unit_db` and `latex_macro_db`.
+#'
 #' The format is not the same as the udunits2 database. Rows are:
 #'
 #' * `symbol`: symbol, e.g. "pt"
@@ -33,7 +36,6 @@
 #'
 #' @name css_unit_db
 #' @export
-#' @aliases latex_unit_db, latex_macro_db
 #' @docType data
 #' @author David Hugh-Jones <davidhughjones@gmail.com>
 #' @references

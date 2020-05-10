@@ -3,14 +3,15 @@
 \docType{data}
 \name{css_unit_db}
 \alias{css_unit_db}
-\alias{latex_unit_db,}
-\alias{latex_macro_db}
 \alias{latex_unit_db}
+\alias{latex_macro_db}
 \title{Data frame of CSS and LaTeX units}
 \description{
-The format is not the same as the udunits2 database. Rows are:
+The package exports three data frames:  \code{css_unit_db},
+\code{latex_unit_db} and \code{latex_macro_db}.
 }
 \details{
+The format is not the same as the udunits2 database. Rows are:
 \itemize{
 \item \code{symbol}: symbol, e.g. "pt"
 \item \code{from_unit}: unit on which the new unit is based, or \code{NA}

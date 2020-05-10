@@ -30,6 +30,34 @@ test_that("length additions", {
 })
 
 
+test_that("set_latex_units", {
+  expect_equal(set_latex_units(1, "bp"), set_units(1, "bp"))
+  expect_error(set_latex_units(1, "m"))
+})
+
+
+test_that("unit_latex", {
+  bp <- set_units(12, "bp")
+  bp <- mixed_units(bp)
+
+  expect_equal(unit_latex("12bp"), bp)
+  expect_equal(unit_latex("12 bp"), bp)
+  expect_equal(unit_latex(" 12 bp"), bp)
+  expect_equal(unit_latex("+12 bp"), bp)
+  expect_equal(unit_latex(" + 12 bp "), bp)
+  expect_equal(unit_latex(" - 12.5 bp"), mixed_units(-12.5, "bp"))
+
+  expect_error(unit_latex("1m"))
+  expect_error(unit_latex("1e2 bp"))
+  expect_error(unit_latex("1 2 bp"))
+  expect_error(unit_latex("12 b p"))
+
+  expect_equal(
+          unit_latex(c("12bp", "1em")),
+          mixed_units(c(12, 1), c("bp", "em"))
+        )
+})
+
 teardown({
   unloadNamespace("cssunits")
   unloadNamespace("units")

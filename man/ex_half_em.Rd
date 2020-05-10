@@ -18,7 +18,12 @@ ex, which is font-dependent. Use this function to make an ex equal to
 0.5em.
 }
 \examples{
+
+unloadNamespace("cssunits")
+unloadNamespace("units")
+library(cssunits)
 library(units)
+
 install_css_units()
 ex_half_em()
 set_units(1, "em") + set_units(1, "ex")
