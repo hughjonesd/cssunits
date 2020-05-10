@@ -66,7 +66,7 @@ set_latex_units <- function (
 #' library(cssunits)
 #' install_css_units()
 #'
-#' unit_css(c("3em", "14px"))
+#' from_css(c("3em", "14px"))
 #'
 #' @name units-from-strings
 NULL
@@ -74,7 +74,7 @@ NULL
 
 #' @export
 #' @rdname units-from-strings
-unit_css <- function (x) {
+from_css <- function (x) {
   numbers <- sub("^(.*?)(\\D+)$", "\\1", x, perl = TRUE)
   units <- sub("^(.*?)(\\D+)$", "\\2", x, perl = TRUE)
   numbers <- as.numeric(numbers)
@@ -90,7 +90,7 @@ unit_css <- function (x) {
 
 #' @export
 #' @rdname units-from-strings
-unit_latex <- function (x) {
+from_latex <- function (x) {
   # "Blank spaces are optional before the signs and the numbers and the units of
   # measure, and you can also put an optional space after the dimension; but you
   # should not put spaces within the digits of a number or between the letters
@@ -118,13 +118,51 @@ unit_latex <- function (x) {
 }
 
 
-validate_css_units <- function (value) {
-  ok <- value %in% css_unit_db$symbol
-  if (! all(ok)) stop("Unrecognized css units:", value[!ok])
-}
+#' Export units as CSS/LaTeX
+#'
+#' These functions throw an error if `units(x)` is not a valid CSS/LaTeX unit.
+#' @param x An object of class `units`` or `mixed_units`
+#' @return A character vector.
+#' @examples
+#'
+#' unloadNamespace("cssunits")
+#' unloadNamespace("units")
+#' library(cssunits)
+#' install_css_units()
+#'
+#' x <- set_css_units(1:3, "pt")
+#' as_css(x)
+#'
+#' @name as-css-latex
+NULL
 
 
-validate_latex_units <- function (value) {
-  ok <- value %in% c(latex_unit_db$symbol,latex_macro_db$symbol)
-  if (! all(ok)) stop("Unrecognized latex units:", value[!ok])
+
+#' @export
+#' @rdname as-css-latex
+as_css <- function (x) UseMethod("as_css")
+
+
+#' @export
+#' @rdname as-css-latex
+as_latex <- function (x) UseMethod("as_latex")
+
+
+#' @export
+as_css.units <- function (x) {
+  validate_css_units(x)
+  paste0(x, units(x))
 }
+#' @export
+as_css.mixed_units <- as_css.units
+
+
+#' @export
+as_latex.units <- function (x) {
+  validate_latex_units(x)
+  paste0(x, units(x))
+}
+#' @export
+as_latex.mixed_units <- as_latex.units
+
+

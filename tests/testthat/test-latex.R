@@ -38,27 +38,36 @@ test_that("set_latex_units", {
 })
 
 
-test_that("unit_latex", {
+test_that("from_latex", {
   bp <- set_units(12, "bp")
   bp <- mixed_units(bp)
 
-  expect_equal(unit_latex("12bp"), bp)
-  expect_equal(unit_latex("12 bp"), bp)
-  expect_equal(unit_latex(" 12 bp"), bp)
-  expect_equal(unit_latex("+12 bp"), bp)
-  expect_equal(unit_latex(" + 12 bp "), bp)
-  expect_equal(unit_latex(" - 12.5 bp"), mixed_units(-12.5, "bp"))
+  expect_equal(from_latex("12bp"), bp)
+  expect_equal(from_latex("12 bp"), bp)
+  expect_equal(from_latex(" 12 bp"), bp)
+  expect_equal(from_latex("+12 bp"), bp)
+  expect_equal(from_latex(" + 12 bp "), bp)
+  expect_equal(from_latex(" - 12.5 bp"), mixed_units(-12.5, "bp"))
 
-  expect_error(unit_latex("1m"))
-  expect_error(unit_latex("1e2 bp"))
-  expect_error(unit_latex("1 2 bp"))
-  expect_error(unit_latex("12 b p"))
+  expect_error(from_latex("1m"))
+  expect_error(from_latex("1e2 bp"))
+  expect_error(from_latex("1 2 bp"))
+  expect_error(from_latex("12 b p"))
 
   expect_equal(
-          unit_latex(c("12bp", "1em")),
+          from_latex(c("12bp", "1em")),
           mixed_units(c(12, 1), c("bp", "em"))
         )
 })
+
+
+test_that("as_latex", {
+  x <- set_latex_units(1:3, "em")
+  expect_identical(as_latex(x), paste0(1:3, "em"))
+  m <- mixed_units(1:3, c("em", "bp", "dd"))
+  expect_identical(as_latex(m), c("1em", "2bp", "3dd"))
+})
+
 
 teardown({
   unloadNamespace("cssunits")

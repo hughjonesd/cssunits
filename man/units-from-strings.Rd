@@ -2,13 +2,13 @@
 % Please edit documentation in R/convenience.R
 \name{units-from-strings}
 \alias{units-from-strings}
-\alias{unit_css}
-\alias{unit_latex}
+\alias{from_css}
+\alias{from_latex}
 \title{Create units from CSS or LaTeX dimensions}
 \usage{
-unit_css(x)
+from_css(x)
 
-unit_latex(x)
+from_latex(x)
 }
 \arguments{
 \item{x}{A character vector.}
@@ -26,6 +26,6 @@ unloadNamespace("units")
 library(cssunits)
 install_css_units()
 
-unit_css(c("3em", "14px"))
+from_css(c("3em", "14px"))
 
 }
