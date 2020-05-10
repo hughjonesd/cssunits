@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![R build
+status](https://github.com/hughjonesd/cssunits/workflows/R-CMD-check/badge.svg)](https://github.com/hughjonesd/cssunits/actions)
 <!-- badges: end -->
 
 cssunits allows you to use the R
