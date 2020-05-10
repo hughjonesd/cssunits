@@ -27,6 +27,9 @@ library(units)
 
 \examples{
 
+unloadNamespace("cssunits")
+unloadNamespace("units")
+library(cssunits)
 library(units)
 install_css_units()
 set_units(1, "in") + set_units(72, "pt")

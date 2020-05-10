@@ -31,7 +31,10 @@ library(units)
 
 \examples{
 
+unloadNamespace("cssunits")
+unloadNamespace("units")
 library(units)
+library(cssunits)
 install_latex_units()
 set_units(1, "in") + set_units(72.27, "pt")
 

@@ -31,6 +31,9 @@ NULL
 #'
 #' @examples
 #'
+#' unloadNamespace("cssunits")
+#' unloadNamespace("units")
+#' library(cssunits)
 #' library(units)
 #' install_css_units()
 #' set_units(1, "in") + set_units(72, "pt")
@@ -56,7 +59,10 @@ install_css_units <- function () {
 #'
 #' @examples
 #'
+#' unloadNamespace("cssunits")
+#' unloadNamespace("units")
 #' library(units)
+#' library(cssunits)
 #' install_latex_units()
 #' set_units(1, "in") + set_units(72.27, "pt")
 #'
