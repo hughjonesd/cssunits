@@ -7,6 +7,8 @@
 
 [![R build
 status](https://github.com/hughjonesd/cssunits/workflows/R-CMD-check/badge.svg)](https://github.com/hughjonesd/cssunits/actions)
+[![Codecov test
+coverage](https://codecov.io/gh/hughjonesd/cssunits/branch/master/graph/badge.svg)](https://codecov.io/gh/hughjonesd/cssunits?branch=master)
 <!-- badges: end -->
 
 cssunits allows you to use the R
